@@ -31,7 +31,7 @@ def get_id(index:int, clusters):
     return cluster_id
 
 def write_to_file(config, f):
-    with open("kubeconfig.yaml","w") as config: 
+    with open(f,"w") as config: 
             config.write(config)
 
 
