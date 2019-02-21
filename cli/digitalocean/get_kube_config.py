@@ -16,7 +16,7 @@ def get_token_from_file(file="token.txt"):
 def list_clusters(token):
     r = requests.get("https://api.digitalocean.com/v2/kubernetes/clusters", headers = {"Content-Type": "application/json", "Authorization": token} )
     if r.status_code != 200:
-        print("Invalid token")
+        print("DigitalOcean returned %d" % (r.status_code))
         return None
     return r.json()
 
@@ -60,6 +60,10 @@ def get_kube_config(argv):
     i = get_clusters_user_input(clusters)
     url = "https://api.digitalocean.com/v2/kubernetes/clusters/" + get_id(i, clusters) + "/kubeconfig"
     c = requests.get(url, headers = {"Content-Type": "application/json", "Authorization": token } )
+
+    if c.status_code != 200:
+        print("DigitalOcean returned %d" % c.status_code)
+        return
 
     if args.out != None:
         write_to_file(str(c.text), args.out)

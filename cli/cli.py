@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 from digitalocean import cli
 import sys
 
