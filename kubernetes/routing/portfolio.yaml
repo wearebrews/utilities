@@ -1,8 +1,0 @@
-kind: Service
-apiVersion: v1
-metadata:
-  name: portfolio
-  namespace: routing
-spec:
-  type: ExternalName
-  externalName: portfolio.portfolio.svc.cluster.local

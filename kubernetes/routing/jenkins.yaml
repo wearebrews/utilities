@@ -1,8 +1,0 @@
-kind: Service
-apiVersion: v1
-metadata:
-  name: jenkins
-  namespace: routing
-spec:
-  type: ExternalName
-  externalName: cd-jenkins.jenkins.svc.cluster.local
