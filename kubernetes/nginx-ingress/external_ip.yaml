@@ -18,6 +18,7 @@ spec:
       protocol: TCP
   externalIPs:
   - 46.101.151.66
+  - 178.128.198.226
   selector:
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/part-of: ingress-nginx
