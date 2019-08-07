@@ -11,6 +11,7 @@ metadata:
 spec:
   tls:
   - hosts:
+    - alertmanager.shapingideas.fyi
     - prometheus.shapingideas.fyi
     secretName: tls-key
   rules:  
@@ -20,4 +21,11 @@ spec:
         - path: /
           backend:
             serviceName: prometheus-server
-            servicePort: 9090
+            servicePort: 80
+    - host: alertmanager.shapingideas.fyi
+      http:
+        paths:
+        - path: /
+          backend:
+            serviceName: prometheus-alertmanager
+            servicePort: 80

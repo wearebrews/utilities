@@ -17,8 +17,7 @@ spec:
       targetPort: 443
       protocol: TCP
   externalIPs:
-  - 157.230.112.203
-  - 104.248.39.36
+  - 167.71.45.112
   selector:
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/part-of: ingress-nginx
