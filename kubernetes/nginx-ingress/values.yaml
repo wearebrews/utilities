@@ -205,13 +205,13 @@ controller:
 
   minAvailable: 1
 
-  resources: {}
-  #  limits:
-  #    cpu: 100m
-  #    memory: 64Mi
-  #  requests:
-  #    cpu: 100m
-  #    memory: 64Mi
+  resources:
+      #limits:
+      #cpu: 100m
+      #memory: 64Mi
+    requests:
+      cpu: 100m
+      memory: 64Mi
 
   autoscaling:
     enabled: false
@@ -341,12 +341,12 @@ controller:
       nodeSelector: {}
 
   metrics:
-    enabled: false
+    enabled: true
 
     service:
-      annotations: {}
-      # prometheus.io/scrape: "true"
-      # prometheus.io/port: "10254"
+      annotations:
+       prometheus.io/scrape: "true"
+       prometheus.io/port: "10254"
 
       omitClusterIP: false
       clusterIP: ""
