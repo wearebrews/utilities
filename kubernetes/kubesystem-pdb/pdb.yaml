@@ -1,0 +1,55 @@
+apiVersion: policy/v1beta1
+kind: PodDisruptionBudget
+metadata:
+    name: cilium-operator
+    namespace: kube-system
+spec:
+    maxUnavailable: 1
+    selector:
+      matchLabels:
+        name: cilium-operator
+---
+apiVersion: policy/v1beta1
+kind: PodDisruptionBudget
+metadata:
+    name: coredns
+    namespace: kube-system
+spec:
+    maxUnavailable: 1
+    selector:
+      matchLabels:
+        k8s-app: kube-dns
+---
+apiVersion: policy/v1beta1
+kind: PodDisruptionBudget
+metadata:
+    name: kubelet-rubber-stamp
+    namespace: kube-system
+spec:
+    maxUnavailable: 1
+    selector:
+      matchLabels:
+        name: kubelet-rubber-stamp
+---
+apiVersion: policy/v1beta1
+kind: PodDisruptionBudget
+metadata:
+    name: metric-server
+    namespace: kube-system
+spec:
+    maxUnavailable: 1
+    selector:
+      matchLabels:
+        app: metrics-server
+---
+apiVersion: policy/v1beta1
+kind: PodDisruptionBudget
+metadata:
+    name: tiller-deploy
+    namespace: kube-system
+spec:
+    maxUnavailable: 1
+    selector:
+      matchLabels:
+        app: helm
+        name: tiller
