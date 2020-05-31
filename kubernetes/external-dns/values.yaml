@@ -1,0 +1,4 @@
+provider: "google"
+policy: "sync"
+google:
+    project: "wearebrews"
